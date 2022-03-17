@@ -1,111 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Personal Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
-	<link rel="stylesheet" href="personalPortfolioCSS.css">
-	<script src="https://kit.fontawesome.com/62bcea50ce.js" crossorigin="anonymous"></script>
-	<script src="jquery-3.6.0.js"></script>
-	<script src="personalPortfolioJS.js"></script>
-</head>
-<body>
-	<nav id="navbar">
-    <ul>
-     <li class="top-fade right-fade"><a href="#welcome">Welcome</a></li>
-       <li class="top-fade" ><a href="#projects">Projects</a></li>
-       <li class="top-fade"><a href="#about">About</a></li>
-       <li class="top-fade right-fade"><a href="#contact">Contact</a></li>
-  </ul> 
-  </nav>
-  <div id="wrapper">
-	  <header>
-  		<section id="welcome">
-	  		<h1>Hi, I'm Mat</h1>
-  	  	<div id="tag">(and I'm a web developer)</div>
-    	</section>
-    </header>
-	  <main>   
-		  <section id = "projects">
-		  <p>Here are some of my projects</p>
-		  <div class="row">
-			  <div class="column">
-				  <div class="img-container project-tile">
-						<img src="images/productLandingPage.jpg" alt="Product Landing Page" style="width:100%">
-							<div class="overlay">
-								<a href="https://codepen.io/mghmay/full/abLVXMw" target="_blank"><div class="img-text">A product landing page</div></a>
-							</div>
-					</div>
-					<div class="img-container project-tile">
-						<img src="images/tributePage.jpg" alt="tributePage" style="width:100%">
-							<div class="overlay">
-								<a href="https://codepen.io/mghmay/full/YzrVoWq" target="_blank"><div class="img-text">A tribute to Marie Curie</div></a>
-							</div>
-					</div>
-       			</div>
-       			<div class="column">
-					<div class="img-container project-tile">
-						<img src="images/form.jpg" alt="Form" style="width:100%">
-							<div class="overlay">
-								<a href="https://codepen.io/mghmay/full/poWwPER" target="_blank"><div class="img-text">A form to find out more</div></a>
-							</div>
-					</div>
-					<div class="img-container project-tile">
-						<img src="images/technicalPage.jpg" alt="Technical Page" style="width:100%">
-							<div class="overlay">
-								<a href="https://codepen.io/mghmay/full/yLzxJxR" target="_blank"><div class="img-text">A technical document for CSS</div></a>
-							</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id = "about">
-			<p>Making dynamic, responsive webpages that work on all devices. Go ahead and try it by resizing this page...</p>
-			<img src = "images/devices.png" usemap = "#image-map" alt = "devices" width = "320" height = "320">		
-		</section>
-		<section id = "contact">
-			<p>Fancy a chat?</p>
-				<ul>
-					<li>
-            <a href = "https://www.linkedin.com/in/mghmay" target = "_blank" >
-              <i class = "fab fa-linkedin-in" alt = "Contact me on Linked In">
-              </i>
-            </a>
-          </li>
-					<li>
-            <a href = "mailto: mghmay@gmail.com" target = "_blank" >
-              <i class="fa fab fa-at" alt = "Email me">
-              </i>
-            </a>
-          </li>
-					<li>
-            <a href = "tel: +447895068818" target = "_blank" >
-              <i class="fab fa-whatsapp" alt = "Whatsapp Me">
-              </i>
-            </a>
-          </li>
-					<li>
-            <a href = "https://www.freecodecamp.org/mghmay" target="_blank" id = "profile-link" >
-              <i class="fab fa-free-code-camp" alt="My Free Code Camp">
-              </i>
-            </a>
-          </li>
-				</ul>
-		</section>
-	</main>
-	<footer role="contentinfo">
-    Copyright &copy; Mathew May 2022
-    <br>
-	  Device icons made by 
-    <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">
-      xnimrodx
-    </a> 
-    from 
-    <a href="https://www.flaticon.com/" title="Flaticon">
-      www.flaticon.com
-    </a>
-	</footer>
-</div>
-</body>
+  <head>
+    <title>Personal Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+    <link rel="stylesheet" href="personalPortfolioCSS.css">
+    <script src="https://kit.fontawesome.com/62bcea50ce.js" crossorigin="anonymous"></script>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="personalPortfolioJS.js"></script>
+  </head>
+  <body>
+    <div class = 'grid wrapper'>
+      <nav id="navbar">
+        <ul>
+          <li class="top-fade right-fade"><a href="#welcome">Welcome</a></li>
+          <li class="top-fade" ><a href="#projects">Projects</a></li>
+          <li class="top-fade"><a href="#about">About</a></li>
+          <li class="top-fade right-fade"><a href="#contact">Contact</a></li>
+        </ul> 
+      </nav>
+      <header id = "hero" role = "banner">
+        <h1>
+          Hi, I'm Mat
+          <span role ="presentation">(and I'm a web developer)</span>
+        </h1>
+        </section> 
+      </header>
+      <main>
+        <div class = "grid">
+          <section id = "projects">
+          <p>Here are some of my projects</p>
+            <div class="row">
+              <div class="column">
+                <div class="img-container project-tile">
+                  <img src="images/productLandingPage.jpg" alt="Product Landing Page" style="width:100%">
+                    <div class="overlay">
+                      <a href="https://codepen.io/mghmay/full/abLVXMw" target="_blank"><div class="img-text">A product landing page</div></a>
+                    </div>
+                </div>
+                <div class="img-container project-tile">
+                  <img src="images/tributePage.jpg" alt="tributePage" style="width:100%">
+                    <div class="overlay">
+                      <a href="https://codepen.io/mghmay/full/YzrVoWq" target="_blank"><div class="img-text">A tribute to Marie Curie</div></a>
+                    </div>
+                </div>
+                  </div>
+                  <div class="column">
+                <div class="img-container project-tile">
+                  <img src="images/form.jpg" alt="Form" style="width:100%">
+                    <div class="overlay">
+                      <a href="https://codepen.io/mghmay/full/poWwPER" target="_blank"><div class="img-text">A form to find out more</div></a>
+                    </div>
+                </div>
+                <div class="img-container project-tile">
+                  <img src="images/technicalPage.jpg" alt="Technical Page" style="width:100%">
+                    <div class="overlay">
+                      <a href="https://codepen.io/mghmay/full/yLzxJxR" target="_blank"><div class="img-text">A technical document for CSS</div></a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id = "about">
+            <p>Making dynamic, responsive webpages that work on all devices. Go ahead and try it by resizing this page...</p>
+            <img src = "images/devices.png" usemap = "#image-map" alt = "devices" width = "320" height = "320">		
+          </section>
+          <section id = "contact">
+            <p>Fancy a chat?</p>
+              <ul>
+                <li>
+                  <a href = "https://www.linkedin.com/in/mghmay" target = "_blank" >
+                    <i class = "fab fa-linkedin-in" alt = "Contact me on Linked In">
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href = "mailto: mghmay@gmail.com" target = "_blank" >
+                    <i class="fa fab fa-at" alt = "Email me">
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href = "tel: +447895068818" target = "_blank" >
+                    <i class="fab fa-whatsapp" alt = "Whatsapp Me">
+                    </i>
+                  </a>
+                </li>
+                <li>
+                  <a href = "https://www.freecodecamp.org/mghmay" target="_blank" id = "profile-link" >
+                    <i class="fab fa-free-code-camp" alt="My Free Code Camp">
+                    </i>
+                  </a>
+                </li>
+              </ul>
+          </section>
+        </div>
+      </main>
+      <footer role="contentinfo">
+        Copyright &copy; Mathew May 2022
+        <br>
+        Device icons made by 
+        <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">
+          xnimrodx
+        </a> 
+        from 
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com
+        </a>
+      </footer>
+    </div>
+  </body>
 </html>

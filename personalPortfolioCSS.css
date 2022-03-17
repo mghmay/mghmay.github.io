@@ -27,7 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body{
 	font-family: Montserrat, Arial, sans-serif;
 	font-weight: 100;
@@ -48,26 +47,44 @@ body::before{
  	text-align: center;
 }
 
-#wrapper{
-	display: grid;
+.grid{
+  display: grid;
+}
+
+.wrapper{
   position: relative;
   width: 80%;
   margin: 0 auto;
-  grid-auto-rows: 1fr auto auto auto 50px; /*IE10*/
-  grid-auto-rows: 100vh 100vh 100vh 25vh 50px; 
+}
+
+.grid.wrapper {
+  grid-template-rows:  auto 100vmax auto 50px; 
   grid-template-areas: 
    	"header"
-   	"projects"
-   	"about"
-   	"contact"
+   	"main"
    	"footer"
 }
 
-main {
+header,
+main,
+footer
+ {
 	height: 100%;
-	padding-bottom: 50px;
   position: relative;
 }
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 main section p{
 	font-size: 1.5rem;
 	text-align: center;
@@ -178,11 +195,9 @@ header{
  	color: var(--text-color-dark);
  	display: flex;
  	flex-direction: column;
- 	grid-area: header;
 }
 
 #navbar{ 
-	grid-area: navbar;
 	margin: 0;
 	height: 48px;
 	position: fixed;
@@ -218,7 +233,7 @@ header{
 
 /* hero */
 
-#welcome {
+#hero {
 	display: flex;
 	flex-direction: column;
   justify-content: center;
@@ -320,8 +335,7 @@ footer {
     font-size: 80%;
 	font-style: italic;
 	padding-top: 15%;
-	margin-bottom: 40px;
-	grid-area: footer;       	
+	margin-bottom: 40px;       	
 }
 footer a{
 	color: inherit;
