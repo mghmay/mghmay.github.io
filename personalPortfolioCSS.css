@@ -91,22 +91,22 @@ nav {
 	margin: 0;
 	height: 48px;
 	position: fixed;
+  top:0;
 	width: 80%;
-	box-sizing: border-box;
-	top:0;
 	background-color: var(--nav-color);
 	transition: top 0.5s ease;
-	z-index: 1;
+	z-index: 1000;
 }
+
 #navbar ul {
 	align-content: center;
 	list-style: none;
 	display: grid;
-	grid-template-rows: auto;
+	grid-template-rows: repeat(4, auto);
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 #navbar li a{
-	display: inline-block;
+	display: block;
   height: 100%;
 	padding: 15px 25px;
 	text-align: center;
@@ -151,7 +151,7 @@ main {
 }
 
 .main-container {
-  grid-template-rows: repeat(3, minmax(400px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 
     "projects"
     "about"
@@ -262,7 +262,7 @@ main section p{
 	grid-area: about;
 	background-color: var(--main-color);
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	align-content: center;
 	justify-content: center;
 	padding: 15%;
@@ -309,11 +309,10 @@ main section p{
 	text-decoration: none;
 	text-align: center;
 }
-/*
 #contact a {
 	display: block;
 }
-*/
+
 
 /* footer */
 
@@ -332,14 +331,12 @@ footer a{
 	color: inherit;
 }
 
-@media (max-width: 1024px) {
-	#wrapper{
+@media (max-width: 960px) {
+	.wrapper{
 		width: 100%;
-		margin: 0;
 	}
 	#navbar{
 		width: 100%;
-		margin: 0;
 	}
 }
 @media (max-width: 767px){
@@ -354,19 +351,19 @@ footer a{
 		top: 100px;
 	}
 }
-@media (max-width: 450px){
+@media (max-width: 480px){
 
 	h1{
 		font-size: 3.5rem;
 	}
-	#tag{
+	.tag{
 		font-size: 1.25rem;
 	}
 	#navbar{
 		width: 100%;
 	}
 	#navbar ul{
-		grid-template-rows: repeat(4, 50px);
+		/*grid-template-rows: repeat(4, 50px); */
 		grid-template-columns: auto;
 	}
 	#navbar li{
