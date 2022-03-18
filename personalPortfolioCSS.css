@@ -12,7 +12,7 @@
 	--nav-color: rgb(241,239,220);
 }
 * {
-  	margin: 0;
+  margin: 0;
  	padding: 0;
 }
 *,
@@ -50,15 +50,15 @@ body::before{
 .grid{
   display: grid;
 }
+.flex {
+  display: flex;
+}
 
 .wrapper{
   position: relative;
   width: 80%;
   margin: 0 auto;
-}
-
-.wrapper {
-  grid-template-rows:  auto 100vmax auto 50px; 
+  grid-template-rows:  auto 100vh auto 50px; 
   grid-template-areas: 
     "nav"
    	"header"
@@ -77,9 +77,7 @@ footer
 nav {
   grid-area: nav;
 }
-header {
-  grid-area: header;
-}
+
 
 main {
   grid-area: main;
@@ -89,17 +87,7 @@ footer {
   grid-area: footer;
 }
 
-.main-container {
-  grid-template-rows: repeat(3, minmax(400px, 1fr));
-  grid-template-areas: 
-    "projects"
-    "about"
-    "contact";
-}
-main section p{
-	font-size: 1.5rem;
-	text-align: center;
-}
+
 
 h1 { 
   font-size: 4rem;
@@ -119,6 +107,96 @@ h1 {
 }
 
 /* grid NB to change to grid */
+
+/* nav */
+
+
+#navbar{ 
+	margin: 0;
+	height: 48px;
+	position: fixed;
+	width: 80%;
+	box-sizing: border-box;
+	top:0;
+	background-color: var(--nav-color);
+	transition: top 0.5s ease;
+	z-index: 1;
+}
+#navbar ul {
+	align-content: center;
+	list-style: none;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#navbar li a{
+	display: inline-block;
+  height: 100%;
+	padding: 15px 25px;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	transition: 0.5s;
+	font-weight: 400;
+	}
+#navbar a:hover {
+	background-color: var(--flair-color);
+	opacity: 0.8;
+	color: var(--text-color-light);
+}
+
+
+/* header */
+
+header{
+	height: 100%;
+  width: 100%;
+ 	background-color: var(--welcome-color); 
+ 	color: var(--text-color-dark);
+  grid-area: header;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+
+}
+/* main */
+
+.main-container {
+  grid-template-rows: repeat(3, minmax(400px, 1fr));
+  grid-template-areas: 
+    "projects"
+    "about"
+    "contact";
+}
+
+main section p{
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+/* main > projects */
+
+#projects{
+	background: linear-gradient(var(--welcome-color), var(--main-color));
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 15%;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+	justify-content: center;
+	grid-area: projects;
+}
+
+#projects p{
+	text-align: center;
+	margin-bottom: 20px;
+	color: var(--text-color-dark);
+}
 
 .row {
   display: -ms-flexbox; /* IE10 */
@@ -194,86 +272,6 @@ h1 {
 .fab:hover{
  transform: scale(1.25, 1.25);
 }
-
-/* header */
-
-header{
-	height: 400px; /* IE10*/
-	height: 100vh;
-  width: 100%;
-  margin: auto;
- 	background-color: var(--welcome-color); 
- 	color: var(--text-color-dark);
- 	display: flex;
- 	flex-direction: column;
-}
-
-#navbar{ 
-	margin: 0;
-	height: 48px;
-	position: fixed;
-	width: 80%;
-	box-sizing: border-box;
-	top:0;
-	background-color: var(--nav-color);
-	transition: top 0.5s ease;
-	z-index: 1;
-}
-#navbar ul {
-	align-content: center;
-	list-style: none;
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-#navbar li a{
-	display: inline-block;
-  height: 100%;
-	padding: 15px 25px;
-	text-align: center;
-	text-decoration: none;
-	color: inherit;
-	transition: 0.5s;
-	font-weight: 400;
-	}
-#navbar a:hover {
-	background-color: var(--flair-color);
-	opacity: 0.8;
-	color: var(--text-color-light);
-}
-
-/* hero */
-
-#hero {
-	display: flex;
-	flex-direction: column;
-  justify-content: center;
- 	align-items: center;
- 	height: 400px; /*IE10*/
- 	height: 100vh;
- 	width: 100%;
-}
-
-/* projects */
-
-#projects{
-	background: linear-gradient(var(--welcome-color), var(--main-color));
-	padding-right: 5%;
-	padding-left: 5%;
-	padding-bottom: 15%;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	text-align: center;
-	justify-content: center;
-	grid-area: projects;
-}
-
-#projects p{
-	text-align: center;
-	margin-bottom: 20px;
-	color: var(--text-color-dark);
-}
 /* about */
 
 #about{
@@ -337,16 +335,13 @@ header{
 
 footer {
 	color: var(--text-color-light);
-	height: 50px;
+	height: 100%;
 	width: 100%;
-	display: block;
-	position: absolute;
-	top:100%;
 	text-align: center;
-    font-size: 80%;
+  font-size: 80%;
 	font-style: italic;
-	padding-top: 15%;
-	margin-bottom: 40px;       	
+	margin-bottom: 40px;
+  background-color: var(--main-color)   	
 }
 footer a{
 	color: inherit;
