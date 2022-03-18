@@ -23,16 +23,15 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
 body{
-	font-family: Montserrat, Arial, sans-serif;
-	font-weight: 100;
+	font-family: 'Montserrat', Arial, sans-serif;
 	color: var(--text-color-dark);
 	font-weight: 200;
-
+  text-align: center;
 }
 body::before{
 	background: url(https://i.ibb.co/1XWLxWH/background-image.jpg), var(--background-color);
@@ -44,7 +43,7 @@ body::before{
  	background-size: cover;
  	position: fixed;
  	z-index: -1;
- 	text-align: center;
+ 	
 }
 
 .grid{
@@ -71,33 +70,7 @@ main,
 footer
  {
 	height: 100%;
-  position: relative;
 } 
-
-nav {
-  grid-area: nav;
-}
-
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
-}
-
-
-
-h1 { 
-  font-size: 4rem;
-  font-weight: inherit;
-  text-shadow: 3px 3px 3px #F4E8BC;	
-}
-
-#tag{
-	font-size: 2rem;
-}
 
 .auto-margin{
   padding: 15%
@@ -110,6 +83,9 @@ h1 {
 
 /* nav */
 
+nav {
+  grid-area: nav;
+}
 
 #navbar{ 
 	margin: 0;
@@ -162,7 +138,21 @@ header{
 .container {
 
 }
+
+h1 { 
+  font-size: 4rem;
+  font-weight: inherit;
+  text-shadow: 3px 3px 3px #F4E8BC;	
+}
+
+.tag{
+	font-size: 2rem;
+}
 /* main */
+
+main {
+  grid-area: main;
+}
 
 .main-container {
   grid-template-rows: repeat(3, minmax(400px, 1fr));
@@ -187,7 +177,6 @@ main section p{
 	width: 100%;
 	height: 100%;
 	margin: auto;
-	text-align: center;
 	justify-content: center;
 	grid-area: projects;
 }
@@ -334,6 +323,7 @@ main section p{
 /* footer */
 
 footer {
+  grid-area: footer;
 	color: var(--text-color-light);
 	height: 100%;
 	width: 100%;
