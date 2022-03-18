@@ -57,9 +57,10 @@ body::before{
   margin: 0 auto;
 }
 
-.grid.wrapper {
+.wrapper {
   grid-template-rows:  auto 100vmax auto 50px; 
   grid-template-areas: 
+    "nav"
    	"header"
    	"main"
    	"footer"
@@ -71,8 +72,11 @@ footer
  {
 	height: 100%;
   position: relative;
-}
+} 
 
+nav {
+  grid-area: nav;
+}
 header {
   grid-area: header;
 }
@@ -85,6 +89,13 @@ footer {
   grid-area: footer;
 }
 
+.main-container {
+  grid-template-rows: repeat(3, minmax(400px, 1fr));
+  grid-template-areas: 
+    "projects"
+    "about"
+    "contact";
+}
 main section p{
 	font-size: 1.5rem;
 	text-align: center;
