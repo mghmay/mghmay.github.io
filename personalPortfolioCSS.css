@@ -135,10 +135,6 @@ header{
   align-items: center;
 }
 
-.container {
-
-}
-
 h1 { 
   font-size: 4rem;
   font-weight: inherit;
@@ -203,7 +199,6 @@ main section p{
 
 .column img{
   margin-top: 16px;
-  vertical-align: middle;
   width: 100%;
   height: auto;
   display: block;
@@ -286,7 +281,7 @@ main section p{
 	color: var(--text-color-light);
 }
 #contact p{
-	margin-bottom: 40px;
+	
 }
 
 
@@ -304,7 +299,7 @@ main section p{
 	justify-content: center;
 	align-content: center;
 	width: 100%;
-	height: 100%;
+	height: 50%;
 	margin: auto;
 }
 #contact li {
