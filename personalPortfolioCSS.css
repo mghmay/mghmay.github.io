@@ -23,7 +23,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 24px;
   scroll-behavior: smooth;
 }
 
@@ -273,6 +273,10 @@ main section p{
 	margin: auto;
 	display: block;
 }
+.responsive {
+  width: 512px;
+  height: 512px;
+ }
 
 /* contact */
 
@@ -281,7 +285,7 @@ main section p{
 	color: var(--text-color-light);
 }
 #contact p{
-	
+	margin-bottom: 1.5rem;
 }
 
 
@@ -332,12 +336,19 @@ footer a{
 }
 
 @media (max-width: 960px) {
+  html {
+    font-size: 18px;
+  }
 	.wrapper{
 		width: 100%;
 	}
 	#navbar{
 		width: 100%;
 	}
+  .responsive {
+    height: 320px;
+    width: 320px;
+  }
 }
 @media (max-width: 767px){
 	#contact{
@@ -346,19 +357,13 @@ footer a{
 	#contact li{
 		padding: 10px 0 10px 0;
 	}
-	footer{
-		position: relative;
-		top: 100px;
-	}
+	
 }
 @media (max-width: 480px){
 
-	h1{
-		font-size: 3.5rem;
-	}
-	.tag{
-		font-size: 1.25rem;
-	}
+	html {
+    font-size: 12px;
+  }
 	#navbar{
 		width: 100%;
 	}
@@ -369,29 +374,26 @@ footer a{
 	#navbar li{
 		border-bottom: 1px solid #877c77;
 	}
-	footer{
-		top: 170;
-	}
-	
-}
-@media (max-width: 380px) {
-  
-	#contact{
-		padding-bottom: 200px;
-	}
-	#contact ul{
-		width: 100%;
-		background-color: var(--flair-color);
-	}
+
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
 	#contact li{
 		width: 100%;
-		border-top: 1px solid var(--text-color-dark);
-		border-bottom: 1px solid var(--text-color-dark);
+		border-top: 1px solid var(--text-color-light);
+		border-bottom: 1px solid var(--text-color-light);
 	}
 	.img-text {
 		font-size: 1rem;
 	}
-	footer{
-		top: 350px;
+
+  #contact ul{
+    height: auto;
+		width: 100%;
+		background-color: var(--flair-color);
 	}
+	footer{
+		top: 170;
+	}	
 }
