@@ -23,7 +23,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 24px;
   scroll-behavior: smooth;
 }
 
@@ -336,6 +336,9 @@ footer a{
 }
 
 @media (max-width: 960px) {
+  html {
+    font-size: 18px;
+  }
 	.wrapper{
 		width: 100%;
 	}
