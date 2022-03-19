@@ -256,7 +256,7 @@ main section p{
 .fab:hover{
  transform: scale(1.25, 1.25);
 }
-/* about */
+/* main > about */
 
 #about{
 	grid-area: about;
@@ -276,7 +276,7 @@ main section p{
   height: 512px;
  }
 
-/* contact */
+/* main > contact */
 
 #about p,
 #contact p{
@@ -285,7 +285,6 @@ main section p{
 #contact p{
 	margin-bottom: 1.5rem;
 }
-
 
 #contact {
 	background-color: var(--main-color);
