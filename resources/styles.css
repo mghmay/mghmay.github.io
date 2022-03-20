@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
  /*general*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
 :root{
 	--background-color: rgb(16,74,101);
@@ -11,10 +12,12 @@
 	--main-color-none-trasparent: rgba(0, 51, 82, 1);
 	--nav-color: rgb(241,239,220);
 }
+
 * {
   margin: 0;
  	padding: 0;
 }
+
 *,
 *::before,
 *::after {
@@ -33,8 +36,9 @@ body{
 	font-weight: 200;
   text-align: center;
 }
+
 body::before{
-	background: url(https://i.ibb.co/1XWLxWH/background-image.jpg), var(--background-color);
+	background: url(./images/background-image.jpg), var(--background-color);
 	content: " ";
 	top: 0;
 	left: 0;
@@ -120,7 +124,6 @@ nav {
 	opacity: 0.8;
 	color: var(--text-color-light);
 }
-
 
 /* header */
 
