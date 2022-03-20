@@ -1,4 +1,4 @@
- /*general*/
+ /*general styles*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
@@ -26,7 +26,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 20px;
   scroll-behavior: smooth;
 }
 
@@ -50,6 +50,38 @@ body::before{
  	
 }
 
+header,
+main,
+footer
+ {
+	height: 100%;
+} 
+
+nav {
+  grid-area: nav;
+}
+
+header {
+  grid-area: header;;
+}
+
+main {
+  grid-area: main;
+}
+
+
+main section p,
+main section form {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* universal classes */
+
 .grid{
   display: grid;
 }
@@ -69,14 +101,6 @@ body::before{
    	"main"
    	"footer"
 }
-
-header,
-main,
-footer
- {
-	height: 100%;
-} 
-
 .auto-margin{
   padding: 15%
 }
@@ -85,10 +109,6 @@ footer
 }
 
 /* nav */
-
-nav {
-  grid-area: nav;
-}
 
 #navbar{ 
 	margin: 0;
@@ -118,27 +138,23 @@ nav {
 	transition: 0.5s;
 	font-weight: 400;
 	}
+
 #navbar a:hover {
 	background-color: var(--flair-color);
 	opacity: 0.8;
 	color: var(--text-color-light);
 }
 
-/* header */
+/* main page header */
 
 .main-header {
   height: 100vh;
-}
-
-header{
-	height: 100%;
   width: 100%;
  	background-color: var(--welcome-color); 
  	color: var(--text-color-dark);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-area: header;
 }
 
 h1 { 
@@ -150,26 +166,18 @@ h1 {
 .tag{
 	font-size: 2rem;
 }
-/* main */
+/* main page main section */
 
-main {
-  grid-area: main;
-}
 
 .main-container {
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 
     "projects"
     "about"
-    "contact";
+    "contact"
 }
 
-main section p{
-	font-size: 1.5rem;
-	text-align: center;
-}
-
-/* main > projects */
+/* main page > projects */
 
 #projects{
 	background: linear-gradient(var(--welcome-color), var(--main-color));
@@ -253,15 +261,6 @@ main section p{
  text-align: center;
 }
 
-.fab {
- font-size: 5rem;
- color: var(--text-color-light);
- transition: .5s ease;
-}
-
-.fab:hover{
- transform: scale(1.25, 1.25);
-}
 /* main > about */
 
 #about{
@@ -316,11 +315,27 @@ main section p{
 	text-decoration: none;
 	text-align: center;
 }
-#contact a {
+#contact li a {
 	display: block;
 }
 
+#contact span a {
+  color: inherit;
+}
 
+#contact span a:active {
+  color: inherit;
+}
+
+.fab {
+  font-size: 5rem;
+  color: var(--text-color-light);
+  transition: .5s ease;
+ }
+ 
+ .fab:hover {
+  transform: scale(1.25, 1.25);
+ }
 /* footer */
 
 footer {
@@ -337,6 +352,98 @@ footer {
 footer a{
 	color: inherit;
 }
+
+/* Contact page */
+
+.contact-page header,
+.contact-page main,
+.contact-page footer {
+  color: var(--text-color-light);
+  background-color: var(--main-color)
+}
+.contact-header {
+  height: 200px
+}
+
+.contact-header h1 {
+  font-size: 3.5rem;
+  margin-top: 100px;
+}
+
+.contact-header .tag {
+  font-size: 1.5rem;
+}
+
+.solid-container {
+  border: invisible;
+  background-color: var(--colour-dark-green);
+  padding:10px;
+  margin: 25px 5%;
+}
+input,
+button,
+select,
+textarea{
+  margin:0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.form-group{
+  display: block;
+  margin: 1rem;
+}
+.form-control{
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin: 5px;
+  border-radius: 5px;
+}
+.form-control:focus{
+  border-color:var(--light-green-colour);
+  outline:0;
+}
+::placeholder{
+  color:black;
+}
+#title{
+  font-size: 3rem;
+  margin:0 0 10px 0;
+}
+#description{
+  font-size: 1.5rem;
+  margin:0px;
+}
+@media (max-width:400px){
+  #description{
+  font-size:1rem;
+  }
+  #title{
+  font-size: 2rem;
+  }
+}
+#no-margin{
+  margin:0;
+}
+#comments{
+  margin:0 10px;
+  width: 100%;
+  height: 100px;
+}
+.input-radio,
+.input-checkbox{
+  display: inline-block;
+  margin-right: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
+}
+.text-center{
+  text-align: center;
+}
+
+/* media queriess */
+
 
 @media (max-width: 960px) {
   html {
