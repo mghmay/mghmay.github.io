@@ -1,16 +1,15 @@
- /*general*/
+ /*general styles*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 
 :root{
-	--background-color: rgb(16,74,101);
-	--text-color-dark: rgba(5,55,87,255);
-	--text-color-light: rgba(241,239,220);
+  --light-text: rgba(241,239,220);
+	--dark-text: rgba(5,55,87,255);
+  --light-background: rgba(241,239,220, 0.8);
+	--dark-background: rgba(0, 51, 82, 0.8);
+	--dark-background-non-transparent: rgba(0, 51, 82, 1);
+	--light-background-non-transparent: rgb(241,239,220);
 	--flair-color: rgba(5,55,87,255);
-	--welcome-color: rgba(241,239,220, 0.8);
-	--main-color: rgba(0, 51, 82, 0.8);
-	--main-color-none-trasparent: rgba(0, 51, 82, 1);
-	--nav-color: rgb(241,239,220);
 }
 
 * {
@@ -26,7 +25,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -34,11 +33,12 @@ body{
 	font-family: 'Montserrat', Arial, sans-serif;
 	color: var(--text-color-dark);
 	font-weight: 200;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 body::before{
-	background: url(./images/background-image.jpg), var(--background-color);
+	background: url(./images/background-image.jpg), var(--dark-background);
 	content: " ";
 	top: 0;
 	left: 0;
@@ -47,26 +47,6 @@ body::before{
  	background-size: cover;
  	position: fixed;
  	z-index: -1;
- 	
-}
-
-.grid{
-  display: grid;
-}
-.flex {
-  display: flex;
-}
-
-.wrapper{
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
-  grid-template-rows:  auto 100vh auto 50px; 
-  grid-template-areas: 
-    "nav"
-   	"header"
-   	"main"
-   	"footer"
 }
 
 header,
@@ -76,6 +56,45 @@ footer
 	height: 100%;
 } 
 
+.wrapper{
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-rows:  auto auto auto 50px; 
+  grid-template-areas: 
+    "nav"
+   	"header"
+   	"main"
+   	"footer"
+}
+
+nav {
+  grid-area: nav;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+
+footer {
+  grid-area: footer;
+}
+
+/* universal classes */
+
+.grid{
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
 .auto-margin{
   padding: 15%
 }
@@ -83,13 +102,33 @@ footer
 	background: linear-gradient(to bottom, rgb(241,239,220), rgb(241,239,220, 0.9));
 }
 
-/* grid NB to change to grid */
-
-/* nav */
-
-nav {
-  grid-area: nav;
+.light-text {
+  color: var(--light-text);
 }
+
+.dark-text {
+  color: var(--dark-text);
+}
+
+.light-background {
+  background-color: var(--light-background);
+}
+
+.dark-background {
+  background-color: var(--dark-background);
+}
+
+.light-background-nt {
+  background-color: var(--light-background-non-transparent);
+}
+.dark-background-nt {
+  background-color: var(--dark-background-non-transparent);
+}
+
+.bold {
+  font-weight: 300;
+}
+/* nav */
 
 #navbar{ 
 	margin: 0;
@@ -97,7 +136,7 @@ nav {
 	position: fixed;
   top:0;
 	width: 80%;
-	background-color: var(--nav-color);
+	background-color: var(--light-background-non-transparent);
 	transition: top 0.5s ease;
 	z-index: 1000;
 }
@@ -119,20 +158,18 @@ nav {
 	transition: 0.5s;
 	font-weight: 400;
 	}
+
 #navbar a:hover {
 	background-color: var(--flair-color);
 	opacity: 0.8;
-	color: var(--text-color-light);
+	color: var(--light-text);
 }
 
-/* header */
+/* main page header */
 
-header{
-	height: 100%;
+.main-header {
+  height: 100vh;
   width: 100%;
- 	background-color: var(--welcome-color); 
- 	color: var(--text-color-dark);
-  grid-area: header;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -141,35 +178,29 @@ header{
 h1 { 
   font-size: 4rem;
   font-weight: inherit;
-  text-shadow: 3px 3px 3px #F4E8BC;	
 }
 
 .tag{
 	font-size: 2rem;
 }
-/* main */
+/* main page main section */
 
-main {
-  grid-area: main;
-}
 
 .main-container {
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 
     "projects"
     "about"
-    "contact";
+    "contact"
 }
-
-main section p{
-	font-size: 1.5rem;
+.main-container section p,
+.main-container section form {
 	text-align: center;
 }
-
-/* main > projects */
+/* main page > projects */
 
 #projects{
-	background: linear-gradient(var(--welcome-color), var(--main-color));
+	background: linear-gradient(var(--light-background), var(--dark-background));
 	padding-right: 5%;
 	padding-left: 5%;
 	padding-bottom: 15%;
@@ -183,18 +214,14 @@ main section p{
 #projects p{
 	text-align: center;
 	margin-bottom: 20px;
-	color: var(--text-color-dark);
 }
 
 .row {
-  display: -ms-flexbox; /* IE10 */
  	display: flex;
- 	-ms-flex-wrap: wrap; /* IE10 */
  	flex-wrap: wrap;
  	padding: 0 10px;
 }
 .column {
- 	-ms-flex: 25%; /* IE10 */
  	flex: 25%;
  	max-width: 50%;
  	padding: 0 10px;
@@ -216,7 +243,7 @@ main section p{
  bottom: 100%;
  left: 0;
  right: 0;
- background-color: var(--main-color-none-trasparent);
+ background-color: var(--dark-background-non-transparent);
  overflow: hidden;
  width: 100%;
  height: 0;
@@ -238,32 +265,21 @@ main section p{
 }
 
 .img-text {
- color: var(--text-color-light);
+ color: var(--light-text);
  font-size: 1.25rem;
  font-weight: 200;
  position: absolute;
  top: 50%;
  left: 50%;
- -ms-transform: translate(-50%, -50%); /*IE10*/
  -webkit-transform: translate(-50%, -50%);
  transform: translate(-50%, -50%);
  text-align: center;
 }
 
-.fab {
- font-size: 5rem;
- color: var(--text-color-light);
- transition: .5s ease;
-}
-
-.fab:hover{
- transform: scale(1.25, 1.25);
-}
 /* main > about */
 
 #about{
 	grid-area: about;
-	background-color: var(--main-color);
 	width: 100%;
 	height: 100%;
 	align-content: center;
@@ -281,16 +297,11 @@ main section p{
 
 /* main > contact */
 
-#about p,
-#contact p{
-	color: var(--text-color-light);
-}
 #contact p{
 	margin-bottom: 1.5rem;
 }
 
 #contact {
-	background-color: var(--main-color);
 	grid-area: contact;
   padding-top: 15%;
 	padding-bottom: 230px;
@@ -313,27 +324,115 @@ main section p{
 	text-decoration: none;
 	text-align: center;
 }
-#contact a {
+#contact li a {
 	display: block;
 }
 
+#contact span a {
+  color: inherit;
+}
 
+#contact span a:active {
+  color: inherit;
+}
+
+.fab {
+  font-size: 5rem;
+  color: var(--light-text);
+  transition: .5s ease;
+ }
+ 
+ .fab:hover {
+  transform: scale(1.25, 1.25);
+ }
 /* footer */
 
 footer {
   grid-area: footer;
-	color: var(--text-color-light);
 	height: 100%;
 	width: 100%;
 	text-align: center;
-  font-size: 80%;
+  font-size: 1rem;
 	font-style: italic;
-	margin-bottom: 40px;
-  background-color: var(--main-color)   	
+	margin-bottom: 40px;	
 }
 footer a{
 	color: inherit;
 }
+
+/* Contact page */
+
+.contact-header {
+  height: fit-content;
+}
+
+.contact-header h1 {
+  font-size: 3.5rem;
+  margin-top: 100px;
+}
+
+.contact-header .tag {
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+
+.survey-container {
+  font-size: 1.25rem;
+  margin: 25px 5%;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.input-radio {
+  font-size: 1.25rem;
+}
+
+input,
+button,
+select,
+textarea,
+select:invalid,
+::placeholder{
+  margin:0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: #979697;
+}
+
+.form-group{
+  display: block;
+  margin: 1rem;
+}
+
+.form-group button{
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+
+.form-group textarea{
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+}
+
+.form-control{
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin: 5px;
+  border-radius: 5px;
+}
+.form-control:focus{
+  border-color:var(--light-text);
+  outline:0;
+}
+
+/* media queriess */
+
 
 @media (max-width: 960px) {
   html {
