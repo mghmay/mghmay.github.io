@@ -392,15 +392,25 @@ footer a{
 input,
 button,
 select,
-textarea{
+textarea,
+select:invalid,
+::placeholder{
   margin:0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  color: #979697;
 }
+
 .form-group{
   display: block;
   margin: 1rem;
+}
+
+.form-group button{
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
 }
 .form-control{
   display: block;
@@ -422,23 +432,17 @@ textarea{
   font-size: 2rem;
   }
 }
-#no-margin{
-  margin:0;
-}
-#comments{
-  margin:0 10px;
+.form-group textarea{
   width: 100%;
   height: 100px;
 }
+
 .input-radio,
 .input-checkbox{
   display: inline-block;
   margin-right: 1rem;
   min-width: 1rem;
   min-height: 1rem;
-}
-.text-center{
-  text-align: center;
 }
 
 /* media queriess */
