@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon"  href="./resources/images/favicon-16x16.png">
     <script src="https://kit.fontawesome.com/62bcea50ce.js" crossorigin="anonymous"></script>
     <script src="./resources/jquery-3.6.0.js"></script>
-    <script src="./resources/javascript.js"></script>
   </head>
 <body>
   <div class="contact-page grid wrapper">
@@ -27,15 +26,26 @@
     </header>
     <main class = "grid">
       <section  class = "light-text dark-background form">
-        <form class="survey-container" id="survey-form">
+        <form class="survey-container" id="survey-form" action = "" method = "post">
           <div class="form-group">
-            <label id="name-label" for = "name"  class = "bold">Name</label>
+            <label id="first-name-label" for = "first-name"  class = "bold">First name</label>
             <input
                    type="text"
-                   name="name"
-                   id="name"
+                   name="first-name"
+                   id="first-name"
                    class="form-control"
-                   placeholder="Enter your name here"
+                   placeholder="Enter your first name"
+                   required
+            />
+          </div>
+          <div class="form-group">
+            <label id="last-name-label" for = "last-name"  class = "bold">Last name</label>
+            <input
+                   type="text"
+                   name="last-name"
+                   id="last-name"
+                   class="form-control"
+                   placeholder="Enter your last name"
                    required
             />
           </div>
@@ -50,37 +60,29 @@
                    required
             />
           </div>
-          <div class="form-group">
-            <label id="number-label" for = "age" class = "bold">Age (optional)</label>
-            <input
-                   type="number"
-                   id="number"
-                   min="18"
-                   max="120"
-                   name="age"
-                   class="form-control"
-                   placeholder="Enter your age here"
-            />
-          </div>
-          <div class="form-group">
-            <p id="collaborate" class = "bold">Are you interested in building a website?</p>
-            <label for = "build-site" class = "input-radio">
+          <div class="form-group" id="collaborate">
+            <p  class = "bold">Are you interested in building a website?</p>
+            <label for = "build-site" >
               <input 
                      name="build-site"
+                     id = 'yes'
+                     class = "input-radio"
                      type="radio"
                      value="yes"
                      >Yes, I am!
             </label>
             <br>
-            <label  for = "build-site" class = "input-radio">
+            <label  for = "build-site" >
               <input 
                      name="build-site"
+                     id = 'no'
+                     class = "input-radio"
                      type="radio"
                      value="no"
                      >I'd like to talk to you about something else!
             </label>
           </div>
-          <div class="form-group" id="whatProject" >
+          <div class="form-group" id="what-project" >
             <p class = "bold">
               What are you interested in working on together?
             </p>
@@ -99,8 +101,8 @@
               <option value="other">Other</option>
             </select>
           </div>
-          <div class="form-group">
-            <label id="other" for = "other" class = "bold">What would you like to work on?</label>
+          <div class="form-group" id = "other-option">
+            <label id="other" for = "other" class = "bold">What kind of project did you have in mind?</label>
             <input
                    type="text"
                    name="other"
@@ -112,7 +114,7 @@
                    required
             />
           </div>
-          <div class="form-group" id = "whatTalkAbout">
+          <div class="form-group" id = "what-talk-about">
             <p class = "bold">What would you like to talk about?</p>
             <textarea id="talkAbout"
                       name="talkAbout"
@@ -120,7 +122,7 @@
                       max="500"
                       placeholder="Enter your ideas here."></textarea>
           </div>
-          <div class="form-group" id = "furtherComments">
+          <div class="form-group" id = "further-comments">
             <p class = "bold">If you have any further comments please leave them below.</p>
             <textarea id="comments"
                       name="comment"
@@ -149,5 +151,6 @@
       </a>
     </footer>
   </div>
+  <script src="./resources/script.js"></script>
 </body>
 </html>
