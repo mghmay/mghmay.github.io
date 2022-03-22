@@ -141,7 +141,7 @@ footer {
 	width: 80%;
 	background-color: var(--light-background-non-transparent);
 	transition: top 0.5s ease;
-	z-index: 1000;
+	z-index: 9999;
 }
 
 #navbar ul {
@@ -221,7 +221,7 @@ h1 {
 
 .gallery{
   position: relative;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
  }
@@ -262,6 +262,7 @@ h1 {
  left: 0;
  width: 100%;
  height: 100%;
+ z-index: 1;
 }
 
 .slides:hover .overlay{
@@ -285,21 +286,23 @@ h1 {
 #next {
   display: block;
   position: absolute;
-  top: 60%;
+  top: 0;
+  height: 85.5%;
   width: auto;
   padding: 16px;
-  margin-top: -50px;
   color: white;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  z-index: 1000;
 }
 
 #prev i,
 #next i {
   position: relative;
+  top: 45%;
 }
 
 #next {
@@ -315,22 +318,26 @@ h1 {
 .mini-img img{
   width: 100%;
   height: auto;
-
 }
+
 .mini-img-container {
   max-height: 150px;
   grid-template-columns: repeat(7, 1fr);
   grid-auto-columns: 1fr;
-
+  position: absolute;
+  bottom: 0;
+  z-index: 500;
 }
 
 .demo {
-  opacity: 0.6;
+  opacity: 0.8;
+
 }
 
 .active,
 .demo:hover {
   opacity: 1;
+
 }
 
 /* main > about */
