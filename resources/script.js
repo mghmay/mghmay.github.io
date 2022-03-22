@@ -1,28 +1,41 @@
 // Add the navbar controls
-
-document.addEventListener("DOMContentLoaded", function() {
-	let prevScrollPos = window.pageYOffset;
-	window.onscroll = function() {
-		var currentScrollPos = window.pageYOffset;
-  		if (prevScrollPos > currentScrollPos) {
-    		document.getElementById("navbar").style.top = "0";
-  		} else {
-    		document.getElementById("navbar").style.top = "-200px";
-  	}
-  	prevScrollPos = currentScrollPos;
+let navBar = document.getElementById("navbar")
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+      navBar.style.top = "0";
+    } else {
+      navBar.style.top = "-400px";
+  }
+  prevScrollPos = currentScrollPos;
 }
-});
+
+// Add navbar mobile functionality
+let mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenu.onclick = function() {
+  if (navBar.style.display === 'none' || navBar.style.top === "-400px") {
+    navBar.style.display = 'block';
+    navBar.style.top = '0';
+  } else {
+    navBar.style.top = '-400px';
+    navBar.style.display = "none";
+  }
+}
+
+//mobileLinks.onclick = () =>
 
 // Add functionality to JS gallery
-let choreBotMini = document.getElementById("chore-bot-mini");
-let customMilkFloatsMini = document.getElementById("custom-milk-floats-mini");
-let mixedMessagesMini = document.getElementById("mixed-messages-mini");
-let productLandingPageMini = document.getElementById("product-landing-page-mini");
-let techicalDocumentMini = document.getElementById("techical-document-mini");
-let tributePageMini = document.getElementById("tribute-page-mini");
-let villageGreenMini = document.getElementById("village-green-mini");
-let prev = document.getElementById("prev");
-let next = document.getElementById("next");
+const choreBotMini = document.getElementById("chore-bot-mini");
+const customMilkFloatsMini = document.getElementById("custom-milk-floats-mini");
+const mixedMessagesMini = document.getElementById("mixed-messages-mini");
+const productLandingPageMini = document.getElementById("product-landing-page-mini");
+const techicalDocumentMini = document.getElementById("techical-document-mini");
+const tributePageMini = document.getElementById("tribute-page-mini");
+const villageGreenMini = document.getElementById("village-green-mini");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
 let slideIndex = 1;
 
 
