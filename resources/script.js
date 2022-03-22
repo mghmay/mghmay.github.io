@@ -1,5 +1,5 @@
 // Add the navbar controls
-let navBar = document.getElementById("navbar")
+const navBar = document.getElementById("navbar")
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
@@ -12,7 +12,7 @@ window.onscroll = function() {
 }
 
 // Add navbar mobile functionality
-let mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu = document.getElementById("mobile-menu");
 
 mobileMenu.onclick = function() {
   if (navBar.style.display === 'none' || navBar.style.top === "-400px") {
@@ -23,8 +23,6 @@ mobileMenu.onclick = function() {
     navBar.style.display = "none";
   }
 }
-
-//mobileLinks.onclick = () =>
 
 // Add functionality to JS gallery
 const choreBotMini = document.getElementById("chore-bot-mini");
