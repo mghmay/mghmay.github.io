@@ -1,128 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./">
-  <title>MGHMay</title>
-</head>
+  <head>
+    <title>MGHMay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+    <link rel="stylesheet" href="./resources/styles.css">
+    <link rel="icon" type="image/x-icon"  href="./resources/images/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/62bcea50ce.js" crossorigin="anonymous"></script>
+    <script src="./resources/jquery-3.6.0.js"></script>
+  </head>
 <body>
-  <div class="container">
-    <header class="header solid-container">
-      <h1 class="text-center title">
-        MGHMay design
-      </h1>
-      <p class="text-center description">
-        Thank you for your interest in MGHMay design. If you would like to find out more or work together on a project, please fill in your details below and I'll get back to you as soon as possible!
-      </p>
+  <div class="contact-page grid wrapper">
+    <nav id="navbar">
+      <ul>
+        <li class="top-fade right-fade"><a href="./index.html">Welcome</a></li>
+        <li class="top-fade" ><a href="#projects">Projects</a></li>
+        <li class="top-fade"><a href="#about">About</a></li>
+        <li class="top-fade right-fade"><a href="./contact.html">Contact</a></li>
+      </ul> 
+    </nav>
+    <header class = "light-text dark-background contact-header">
+      <h1>MGHMay design</h1>
+      <p class = "tag">Leave your details in the form below and I'll get back to you as soon as possible.</p>
     </header>
-    <form class="survey-form solid-container" id="survey-form">
-      <div class="form-group">
-        <label id="name-label" for = "name">Name</label>
-        <input
-               type="text"
-               name="name"
-               id="name"
-               class="form-control"
-               placeholder="Enter your name here"
-               required
-        />
-      </div>
-      <div class="form-group">
-        <label id="email-label" for = "email">Email</label>
-        <input
-               type="email"
-               name="email"
-               id="email"
-               class="form-control"
-               placeholder="Enter your email address here"
-               required
-        />
-      </div>
-      <div class="form-group">
-        <label id="number-label" for = "age">Age (optional)</label>
-        <input
-               type="number"
-               id="number"
-               min="7"
-               max="120"
-               name="age"
-               class="form-control"
-               placeholder="Enter your age here"
-        />
-      </div>
-      <div class="form-group">
-        <p id="collaborate">Are you interested in building a website?</p>
-        <label>
-          <input 
-                 name="collaborate"
-                 type="radio"
-                 value="yes"
-                 class="input-radio"
-                 checked
-                 >Yes, I am!
-        </label>
-        <br>
-        <label>
-          <input 
-                 name="collaborate"
-                 type="radio"
-                 value="notApplicable"
-                 class="input-radio"
-                 >I'd like to talk to you about something else!
-        </label>
-      </div>
-      <div class="form-group">
-        <p id="interest">
-          What are you interested in working on together?
-        </p>
-        <select 
-                id="dropdown"
-                name="interest"
-                class="form-control"
-        >
-          <option disabled selected value>
-            Select what to work on.
-          </option>
-          <option value="commerce">Commerce site</option>
-          <option value="personal">Personal site or blog</option>
-          <option value="form">Survey forms</option>
-          <option value="game">Javascript games</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label id="other" for = "other">Email</label>
-        <input
-               type="text"
-               name="other"
-               id="otherSiteOption"
-               class="form-control"
-               placeholder="What would you like to work on?"
-               min = "5"
-               max = "25"
-               required
-        />
-      </div>
-      <div class="form-group" id = "whatTalkAbout">
-        <p>What would you like to talk about?</p>
-        <textarea id="talkAbout"
-                  name="talkAbout"
-                  placeholder="..."></textarea>
-      </div>
-      <div class="form-group" id = "furtherComments">
-        <p>If you have any further comments please leave them below.</p>
-        <textarea id="comments"
-                  name="comment"
-                  placeholder="Enter comments here."></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit"
-                id="submit">Submit
-        </button>
-      </div>
-    </form>
+    <main class = "grid">
+      <section  class = "light-text dark-background form">
+        <form class="survey-container" id="survey-form" action = "" method = "post">
+          <div class="form-group">
+            <label id="first-name-label" for = "first-name"  class = "bold">First name</label>
+            <input
+                   type="text"
+                   name="first-name"
+                   id="first-name"
+                   class="form-control"
+                   placeholder="Enter your first name"
+                   required
+            />
+          </div>
+          <div class="form-group">
+            <label id="last-name-label" for = "last-name"  class = "bold">Last name</label>
+            <input
+                   type="text"
+                   name="last-name"
+                   id="last-name"
+                   class="form-control"
+                   placeholder="Enter your last name"
+                   required
+            />
+          </div>
+          <div class="form-group">
+            <label id="email-label" for = "email"  class = "bold">Email</label>
+            <input
+                   type="email"
+                   name="email"
+                   id="email"
+                   class="form-control"
+                   placeholder="Enter your email address here"
+                   required
+            />
+          </div>
+          <div class="form-group" id="collaborate">
+            <p  class = "bold">Are you interested in building a website?</p>
+            <label for = "build-site" >
+              <input 
+                     name="build-site"
+                     id = 'yes'
+                     class = "input-radio"
+                     type="radio"
+                     value="yes"
+                     >Yes, I am!
+            </label>
+            <br>
+            <label  for = "build-site" >
+              <input 
+                     name="build-site"
+                     id = 'no'
+                     class = "input-radio"
+                     type="radio"
+                     value="no"
+                     >I'd like to talk to you about something else!
+            </label>
+          </div>
+          <div class="form-group" id="what-project" >
+            <p class = "bold">
+              What are you interested in working on together?
+            </p>
+            <select 
+                    id="dropdown"
+                    name="interest"
+                    class="form-control"
+            >
+              <option disabled selected value>
+                Select what to work on.
+              </option>
+              <option value="commerce">Commerce site</option>
+              <option value="personal">Personal site or blog</option>
+              <option value="form">Survey forms</option>
+              <option value="game">Javascript games</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group" id = "other-option">
+            <label id="other" for = "other" class = "bold">What kind of project did you have in mind?</label>
+            <input
+                   type="text"
+                   name="other"
+                   id="otherSiteOption"
+                   class="form-control"
+                   placeholder = "Enter the project here"
+                   min = "5"
+                   max = "25"
+                   required
+            />
+          </div>
+          <div class="form-group" id = "what-talk-about">
+            <p class = "bold">What would you like to talk about?</p>
+            <textarea id="talkAbout"
+                      name="talkAbout"
+                      min="100"
+                      max="500"
+                      placeholder="Enter your ideas here."></textarea>
+          </div>
+          <div class="form-group" id = "further-comments">
+            <p class = "bold">If you have any further comments please leave them below.</p>
+            <textarea id="comments"
+                      name="comment"
+                      min="100"
+                      max="500"
+                      placeholder="Enter comments here."></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit"
+                    id="submit" class = "bold">Submit
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer role="contentinfo"  class = "light-text dark-background">
+      Copyright &copy; Mathew May 2022
+      <br>
+      Device icons made by 
+      <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">
+        xnimrodx
+      </a> 
+      from 
+      <a href="https://www.flaticon.com/" title="Flaticon">
+        www.flaticon.com
+      </a>
+    </footer>
   </div>
+  <script src="./resources/script.js"></script>
 </body>
 </html>
