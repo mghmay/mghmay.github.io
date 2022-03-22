@@ -23,24 +23,48 @@ let tributePageMini = document.getElementById("tribute-page-mini");
 let villageGreenMini = document.getElementById("village-green-mini");
 let prev = document.getElementById("prev");
 let next = document.getElementById("next");
+let slideIndex = 1;
 
-function plusSlides(slide) {
 
+function showSlides(n) {
+  let slides = document.getElementsByClassName("slides");
+  let minis = document.getElementsByClassName("demo");
+  if (n > slides.length) {
+    slideIndex = 1;
+  } if (n < 1 ) {
+    slideIndex = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < minis.length; i++) {
+    minis[i].className = minis[i].className.replace("active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  minis[slideIndex-1].className += "active";
 }
 
-function currentSlide(slide) {
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-prev.onclick="plusSlides(-1)"
-next.onclick="plusSlides(1)"
-choreBotMini.onclick = "currentSlide(1)"
-customMilkFloatsMini.onclick = "currentSlide(2)"
-mixedMessagesMini.onclick = "currentSlide(3)"
-productLandingPageMini.onclick = "currentSlide(4)"
-techicalDocumentMini.onclick = "currentSlide(5)"
-tributePageMini.onclick = "currentSlide(6)"
-villageGreenMini.onclick = "currentSlide(7)"
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+
+prev.onclick = () => plusSlides(-1);
+next.onclick = () => plusSlides(1);
+choreBotMini.onclick = () => currentSlide(1);
+customMilkFloatsMini.onclick = () => currentSlide(2);
+mixedMessagesMini.onclick = () => currentSlide(3);
+productLandingPageMini.onclick = () => currentSlide(4);
+techicalDocumentMini.onclick = () => currentSlide(5);
+tributePageMini.onclick = () => currentSlide(6);
+villageGreenMini.onclick = () => currentSlide(7);
 
 // Add form controls depending on input
 
