@@ -1,14 +1,17 @@
 // Add the navbar controls
+let widthMatch = window.matchMedia("(max-width: 480px)").matches;
 const navBar = document.getElementById("navbar")
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
+  if (!widthMatch) {
     if (prevScrollPos > currentScrollPos) {
       navBar.style.top = "0";
     } else {
       navBar.style.top = "-400px";
-  }
+    }
   prevScrollPos = currentScrollPos;
+  }
 }
 
 // Add navbar mobile functionality
@@ -86,7 +89,7 @@ const productLanding = document.getElementById("product-landing");
 const technicalPage = document.getElementById("technical-page");
 const tributePage = document.getElementById("tribute-page");
 const villageGreen = document.getElementById("village-green");
-let widthMatch = window.matchMedia("(max-width: 480px)").matches;
+// let widthMatch = window.matchMedia("(max-width: 480px)").matches;
 let widthMedia = window.matchMedia("(max-width: 480px)");
 /*
 function addMediaListener(query, callback) {
