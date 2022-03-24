@@ -592,8 +592,8 @@ select:invalid,
   }
 	#contact li{
 		width: 100%;
-		border-top: 1px solid var(--text-color-light);
-		border-bottom: 1px solid var(--text-color-light);
+		border-top: 1px solid var(--light-text);
+		border-bottom: 1px solid var(--light-text);
 	}
 	.img-text {
 		font-size: 1rem;
