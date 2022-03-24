@@ -15,8 +15,7 @@ window.onscroll = function() {
 const mobileMenu = document.getElementById("mobile-menu");
 
 mobileMenu.onclick = function() {
-  if (navBar.style.display === 'none'// || navBar.style.top === "-400px"
-  ) {
+  if (navBar.style.display === 'none' || navBar.style.top === "-400px") {
     navBar.style.display = 'block';
     navBar.style.top = '0';
   } else {
