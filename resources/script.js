@@ -25,13 +25,13 @@ mobileMenu.onclick = function() {
 }
 
 // Add functionality to JS gallery
-const choreBotMini = document.getElementById("chore-bot-mini");
-const customMilkFloatsMini = document.getElementById("custom-milk-floats-mini");
-const mixedMessagesMini = document.getElementById("mixed-messages-mini");
-const productLandingPageMini = document.getElementById("product-landing-page-mini");
-const techicalDocumentMini = document.getElementById("techical-document-mini");
-const tributePageMini = document.getElementById("tribute-page-mini");
-const villageGreenMini = document.getElementById("village-green-mini");
+const choreBot = document.getElementById("chore-bot");
+const customMilkFloats = document.getElementById("milk-floats");
+const mixedMessages = document.getElementById("mixed-messages");
+const productLanding = document.getElementById("product-landing");
+const techicalDocument = document.getElementById("techical-page");
+const tributePage = document.getElementById("tribute-page");
+const villageGreen = document.getElementById("village-green");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 let slideIndex = 1;
