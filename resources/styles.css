@@ -582,6 +582,10 @@ select:invalid,
     font-size: 4rem;
   }
 
+  .mini-img-container {
+    max-height: 250px;
+  }
+
   .responsive {
     width: 100%;
     height: auto;
