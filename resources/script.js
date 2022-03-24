@@ -25,13 +25,6 @@ mobileMenu.onclick = function() {
 }
 
 // Add functionality to JS gallery
-const choreBot = document.getElementById("chore-bot");
-const customMilkFloats = document.getElementById("milk-floats");
-const mixedMessages = document.getElementById("mixed-messages");
-const productLanding = document.getElementById("product-landing");
-const techicalDocument = document.getElementById("techical-page");
-const tributePage = document.getElementById("tribute-page");
-const villageGreen = document.getElementById("village-green");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 let slideIndex = 1;
@@ -77,7 +70,31 @@ techicalDocumentMini.onclick = () => currentSlide(5);
 tributePageMini.onclick = () => currentSlide(6);
 villageGreenMini.onclick = () => currentSlide(7);
 
-// Add form controls depending on input
+//change img sizes based on mobi or notify
+
+const choreBot = document.getElementById("chore-bot");
+const customMilkFloats = document.getElementById("milk-floats");
+const mixedMessages = document.getElementById("mixed-messages");
+const productLanding = document.getElementById("product-landing");
+const techicalDocument = document.getElementById("techical-page");
+const tributePage = document.getElementById("tribute-page");
+const villageGreen = document.getElementById("village-green");
+let widthMatch = window.matchMedia("(min-width: 480px)");
+
+widthMatch.addEventListener('change', function(size) {
+    if (size.matches) {
+        choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
+        customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
+        mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messages-mobi.jpg";
+        productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
+        techicalDocument.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
+        tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
+        villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
+    }
+});
+
+
+// contact page > Add form controls depending on input
 
 let inputYes = document.getElementById("yes");
 let inputNo = document.getElementById("no");
