@@ -141,6 +141,13 @@ footer {
  }
 /* nav */
 
+@media (max-width: 480px){
+
+	#navbar{
+    display: none;
+		width: 100%;
+	}
+} 
 #navbar{ 
 	margin: 0;
 	height: 48px;
