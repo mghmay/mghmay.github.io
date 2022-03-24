@@ -24,6 +24,7 @@ mobileMenu.onclick = function() {
   }
 }
 
+
 // Add functionality to JS gallery
 const choreBotMini = document.getElementById("chore-bot-mini");
 const customMilkFloatsMini = document.getElementById("custom-milk-floats-mini");
@@ -83,22 +84,43 @@ const choreBot = document.getElementById("chore-bot");
 const customMilkFloats = document.getElementById("milk-floats");
 const mixedMessages = document.getElementById("mixed-messages");
 const productLanding = document.getElementById("product-landing");
-const techicalDocument = document.getElementById("techical-page");
+const technicalPage = document.getElementById("technical-page");
 const tributePage = document.getElementById("tribute-page");
 const villageGreen = document.getElementById("village-green");
-let widthMatch = window.matchMedia("(min-width: 480px)");
+let widthMedia = window.matchMedia("(max-width: 480px)");
 
+function addMediaListener(query, callback) {
+  if (query.addEventListener){
+    query.addEventListener("change", callback);
+  } else {
+    query.addListener(callback);
+  }
+}
+
+addMediaListener(widthMedia, event => {
+  if (event.matches) {
+    choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
+    customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
+    mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messeges-mobi.jpg";
+    productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
+    technicalPage.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
+    tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
+    villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
+  }
+});
+/*
 widthMatch.addEventListener('change', function(size) {
     if (size.matches) {
         choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
         customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
-        mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messages-mobi.jpg";
+        mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messeges-mobi.jpg";
         productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
-        techicalDocument.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
+        technicalPage.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
         tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
         villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
     }
 });
+*/
 
 
 // contact page > Add form controls depending on input
