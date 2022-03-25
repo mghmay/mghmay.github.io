@@ -597,18 +597,22 @@ select:invalid,
     width: 100%;
     height: auto;
   }
+  #about {
+    padding-top: 40%;
+  }
+  #contact ul{
+    height: auto;
+		width: 100%;
+		background-color: var(--flair-color);
+	}
+
 	#contact li{
 		width: 100%;
 		border-top: 1px solid var(--light-text);
 		border-bottom: 1px solid var(--light-text);
 	}
+
 	.img-text {
 		font-size: 1rem;
-	}
-
-  #contact ul{
-    height: auto;
-		width: 100%;
-		background-color: var(--flair-color);
 	}
 }
