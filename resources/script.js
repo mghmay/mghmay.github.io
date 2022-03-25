@@ -1,26 +1,27 @@
 // Add the navbar controls
+let widthMatch = window.matchMedia("(max-width: 480px)").matches;
 const navBar = document.getElementById("navbar")
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
+  if (!widthMatch) {
     if (prevScrollPos > currentScrollPos) {
       navBar.style.top = "0";
     } else {
       navBar.style.top = "-400px";
-  }
+    }
   prevScrollPos = currentScrollPos;
+  }
 }
 
 // Add navbar mobile functionality
 const mobileMenu = document.getElementById("mobile-menu");
 
 mobileMenu.onclick = function() {
-  if (navBar.style.display === 'none' || navBar.style.top === "-400px") {
-    navBar.style.display = 'block';
-    navBar.style.top = '0';
+  if (navBar.style.display === 'block') {
+    navBar.style.display = 'none';
   } else {
-    navBar.style.top = '-400px';
-    navBar.style.display = "none";
+    navBar.style.display = "block";
   }
 }
 
@@ -87,53 +88,7 @@ const productLanding = document.getElementById("product-landing");
 const technicalPage = document.getElementById("technical-page");
 const tributePage = document.getElementById("tribute-page");
 const villageGreen = document.getElementById("village-green");
-let widthMatch = window.matchMedia("(max-width: 480px)").matches;
 let widthMedia = window.matchMedia("(max-width: 480px)");
-/*
-function addMediaListener(query, callback) {
-  if (query.addEventListener){
-    query.addEventListener("change", callback);
-  } else {
-    query.addListener(callback);
-  }
-}
-
-addMediaListener(widthMedia, event => {
-  if (event.matches) {
-    choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
-    customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
-    mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messeges-mobi.jpg";
-    productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
-    technicalPage.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
-    tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
-    villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
-  }
-}); */
-/*
-widthMatch.addEventListener('change', function(size) {
-    if (size.matches) {
-        choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
-        customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
-        mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messeges-mobi.jpg";
-        productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
-        technicalPage.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
-        tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
-        villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
-    }
-});
-*/
-/*
-window.addEventListener("load", (event) =>{
-  if (widthMatch) {
-    choreBot.src = "resources/images/JS-gallery-images/mobile-images/chore-bot-mobi.jpg";
-    customMilkFloats.src = "resources/images/JS-gallery-images/mobile-images/custom-milk-floats-mobi.jpg";
-    mixedMessages.src = "resources/images/JS-gallery-images/mobile-images/mixed-messeges-mobi.jpg";
-    productLanding.src = "resources/images/JS-gallery-images/mobile-images/product-landing-mobi.jpg";
-    technicalPage.src = "resources/images/JS-gallery-images/mobile-images/technical-page-mobi.jpg";
-    tributePage.src = "resources/images/JS-gallery-images/mobile-images/tribute-page-mobi.jpg";
-    villageGreen.src = "resources/images/JS-gallery-images/mobile-images/village-green-pres-mobi.jpg";
-  } 
-})*/
 
 function screenSize(){
   if (widthMatch) {
@@ -159,12 +114,12 @@ window.onchange = () => screenSize();
 
 // contact page > Add form controls depending on input
 
-let inputYes = document.getElementById("yes");
-let inputNo = document.getElementById("no");
-let project = document.getElementById("what-project");
-let whatTalkAbout = document.getElementById("what-talk-about");
-let options = document.getElementById("dropdown");
-let otherOption = document.getElementById("other-option");
+const inputYes = document.getElementById("yes");
+const inputNo = document.getElementById("no");
+const project = document.getElementById("what-project");
+const whatTalkAbout = document.getElementById("what-talk-about");
+const options = document.getElementById("dropdown");
+const otherOption = document.getElementById("other-option");
 
 
 inputYes.checked = false;
